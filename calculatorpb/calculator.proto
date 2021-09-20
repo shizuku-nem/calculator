@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package="/"; // su dung ngon ngu go va khi file gen ra co package gi
+
+message SumRequest {
+    int32 num1 = 1; // tag thu tu
+    int32 num2 = 2;
+}
+
+message SumResponse {
+    int32 result = 1;
+}
+
+service calculatorService {
+    rpc Sum (SumRequest) returns (SumResponse);
+}

@@ -1,0 +1,8 @@
+protoc calculator/calculatorpb/calculator.proto --go_out=plugins=grpc:calculator
+
+go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
+go get -u google.golang.org/grpc
+
+Khi chay go get mà thấy vẫn lỗi có thể command + shift + P search "GO" chạy install/update...
+
+docker run -p 4770:4770 -p 4771:4771 -v /Users/daiphamtrong/projects/bookstore-service/calculator/calculatorpb:/proto tkpd/gripmock /proto/calculator.proto
